@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Restaurant.Migrations
+namespace RestaurantAPI.Migrations
 {
     public partial class Init : Migration
     {

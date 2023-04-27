@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net.Sockets;
 
-namespace Restaurant.Entities
+namespace RestaurantAPI.Entities
 {
     public class Restaurant
     {

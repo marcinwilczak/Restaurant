@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System;
-using Restaurant.Controllers;
+using RestaurantAPI.Controllers;
 
-namespace Restaurant
+namespace RestaurantAPI
 {
     public class WeatherForecastService : IWeatherForecastService
     {

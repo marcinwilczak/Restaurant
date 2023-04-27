@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Restaurant.Entities;
+using RestaurantAPI.Entities;
 
-namespace Restaurant.Migrations
+namespace RestaurantAPI.Migrations
 {
     [DbContext(typeof(RestaurantDbContext))]
     [Migration("20230427113347_Init")]

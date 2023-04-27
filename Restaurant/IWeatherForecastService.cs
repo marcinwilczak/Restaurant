@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace Restaurant
+namespace RestaurantAPI
 {
     public interface IWeatherForecastService
     {

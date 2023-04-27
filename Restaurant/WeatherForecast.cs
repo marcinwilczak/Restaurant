@@ -1,6 +1,6 @@
 using System;
 
-namespace Restaurant
+namespace RestaurantAPI
 {
     public class WeatherForecast
     {
