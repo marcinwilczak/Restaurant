@@ -12,5 +12,7 @@ namespace RestaurantAPI.Services
         RestaurantDto GetById(int id);
 
         bool Delete(int id);
+
+        bool Update(int id, UpdateRestaurantDto dto);
     }
 }
