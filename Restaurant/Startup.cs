@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RestaurantAPI.Entities;
 using RestaurantAPI.Middleware;
+using RestaurantAPI.Entities;
 using RestaurantAPI.Services;
 
 namespace RestaurantAPI
@@ -28,6 +28,7 @@ namespace RestaurantAPI
             services.AddAutoMapper(this.GetType().Assembly);
             services.AddScoped<IRestaurantService, RestaurantService>();
             services.AddScoped<ErrorHandlingMiddleware>();
+            services.AddScoped<RequestTimeMiddleware>();
             services.AddSwaggerGen();
         }
 
@@ -42,6 +43,7 @@ namespace RestaurantAPI
             }
 
             app.UseMiddleware<ErrorHandlingMiddleware>();
+            app.UseMiddleware<RequestTimeMiddleware>();
             app.UseHttpsRedirection();
 
             app.UseSwagger();
