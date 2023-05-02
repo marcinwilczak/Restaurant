@@ -7,6 +7,11 @@ using Microsoft.Extensions.Hosting;
 using RestaurantAPI.Middleware;
 using RestaurantAPI.Entities;
 using RestaurantAPI.Services;
+using Microsoft.AspNetCore.Identity;
+using FluentValidation;
+using RestaurantAPI.Models;
+using RestaurantAPI.Models.Validators;
+using FluentValidation.AspNetCore;
 
 namespace RestaurantAPI
 {
@@ -22,13 +27,16 @@ namespace RestaurantAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation();
             services.AddDbContext<RestaurantDbContext>();
             services.AddScoped<RestaurantSeeder>();
             services.AddAutoMapper(this.GetType().Assembly);
             services.AddScoped<IRestaurantService, RestaurantService>();
             services.AddScoped<IDishService, DishService>();
+            services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<ErrorHandlingMiddleware>();
+            services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+            services.AddScoped<IValidator<RegisterUserDto>, RegisterUserDtoValidator>();
             services.AddScoped<RequestTimeMiddleware>();
             services.AddSwaggerGen();
         }
