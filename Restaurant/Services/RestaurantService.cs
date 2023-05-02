@@ -4,7 +4,6 @@ using Microsoft.Extensions.Logging;
 using RestaurantAPI.Entities;
 using RestaurantAPI.Exceptions;
 using RestaurantAPI.Models;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -63,7 +62,9 @@ namespace RestaurantAPI.Services
                 .FirstOrDefault(r => r.Id == id);
 
             if (restaurant is null)
-                throw new NotFoundException("Restaurant not found.");
+            {
+                throw new NotFoundException("Restaurant not found");
+            }
 
             var result = _mapper.Map<RestaurantDto>(restaurant);
             return result;
